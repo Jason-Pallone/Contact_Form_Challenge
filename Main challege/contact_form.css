@@ -1,0 +1,379 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+}
+  
+* {
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  display: flex;
+  text-align: center;
+}
+
+#header_img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  border: 0;
+}
+
+/* Notification for form element */
+
+#validation_message {
+  display: none;
+  font-size: 20px;
+  font-weight: bolder;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px #000;
+  -mox-box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #000;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+/* Fieldset and Legend*/
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  margin: 1em 0;
+  border: solid 1px #ccc;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+legend {
+  padding: 0 .25em;
+  font-size: 1.25em;
+  color: rgb(34, 34, 34);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-top: .5em;
+  margin-right: 41%;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+.required:after {
+  content:" *";
+  color: red;
+  font-weight: bold;
+}
+
+#email_div label {
+  position: absolute;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  top: 30px;
+}
+
+#email_label {
+  margin-right: 43%;
+}
+
+#promo_code_label {
+  margin-right: 30%;
+}
+
+#how_did_you_hear_label {
+  margin-right: 16%;
+}
+
+#please_specify_label {
+  display: none;
+  margin-right: 58%;
+}
+
+/* Inputs and textarea */
+input {
+  width: 15em;
+  padding: .5em;
+  border: solid 1px #999;
+  font-size: 12px;
+}
+
+#first_name, #last_name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#email {
+  font-style: italic;
+}
+
+#email_div {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+textarea {
+  min-height: 8em;
+  width: 100%;
+  padding: .5em;
+  border: solid 1px #999;
+}
+
+input[type="checkbox"] {
+  width: 1em;
+}
+
+input[type="submit"] {
+  padding: .5em 1em;
+  margin-top: -2.5em;
+  border-radius: 6px;
+  background-color: #2c3e50;
+  color: #fff;
+  font-size: .8em;
+  letter-spacing: 1px;
+  width: 7em;
+  opacity: .5;
+}
+
+input[type="submit"]:hover {
+  -webkit-transition: 0.30s ease-in-out;
+  -moz-transition: 0.30s ease-in-out;
+  -ms-transition: 0.30s ease-in-out;
+  -o-transition: 0.30s ease-in-out;
+  background-color: rgb(24, 96, 252);
+  cursor: pointer;
+}
+
+input, textarea {
+  outline: none;
+  border-radius: 2px;
+}
+
+input:focus, textarea:focus {
+  -webkit-transition: 0.30s ease-in-out;
+  -moz-transition: 0.30s ease-in-out;
+  -ms-transition: 0.30s ease-in-out;
+  -o-transition: 0.30s ease-in-out;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#terms_and_conditions_div {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+/* Error text elements */
+
+#email_error_msg, #promo_error_msg {
+  font-size: 1em;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
+/* Select menu */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 12em;
+  height: 2.7em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+
+/* Terms and Conditions pop up text */
+
+#zero{
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: black;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#popUpBox {  
+  position:fixed;
+  left:0;
+  right:0;
+  margin: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 400px;
+  height: auto;
+  padding: 15px;  
+  background: #fff;
+  box-sizing: content-box;
+  border-radius: 5px;
+}
+
+a, a:visited, a:focus {
+  margin-right: 10px;
+  color: black;
+  padding: 5px;
+}
+
+a:hover {
+  -webkit-transition: 0.30s ease-in-out;
+  -moz-transition: 0.30s ease-in-out;
+  -ms-transition: 0.30s ease-in-out;
+  -o-transition: 0.30s ease-in-out;
+  color: rgb(0, 110, 255);  
+}
+
+#text {
+  text-align: justify;
+  padding: 1em 0;
+}
+
+.right {
+  font-weight: bold;
+  float: right;  
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;       
+  text-align: center;
+  font: 18px bold;
+  color: #000000;
+}
+
+
+/* This is for mobile device correction above 370px, for the labels of the form */
+
+@media screen and (min-width: 370px) {
+  
+  label {
+    margin-right: 34%;
+  }
+
+  #email_label {
+    margin-right: 36%;
+  }
+  
+  #promo_code_label {
+    margin-right: 26%;
+  }
+  
+  #how_did_you_hear_label {
+    margin-right: 13%;
+  }
+
+  #please_specify_label {
+    margin-right: 65%;
+  }
+}
+
+/* Large screen rules */
+
+@media screen and (min-width: 430px) {
+  legend {
+     font-size: 1.75em;
+  }
+
+  fieldset {
+    padding: 1em 2em;
+  }
+
+  label {
+    margin-right: 30%;
+  }
+
+  #email_label {
+    margin-right: 31%;
+  }
+  
+  #promo_code_label {
+    margin-right: 22%;
+  }
+  
+  #how_did_you_hear_label {
+    margin-right: 11%;
+  }
+
+  #please_specify_label {
+    margin-right: 70%;
+  }
+}
+

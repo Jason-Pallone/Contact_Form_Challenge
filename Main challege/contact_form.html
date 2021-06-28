@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./contact_form.css">
+    <title>Convention Data Services Event</title>
+</head>
+<body>
+    <div id="validation_message"></div>
+
+    <header>
+      <img id="header_img" src="./Code_challenge_img.png" alt="Event location image">
+    </header>
+
+    <form id="contact_form" name="contact_form" method="POST">
+      <fieldset>
+        <legend>Contact Details</legend>
+
+        <label for="first_name" class="required">First name:</label>
+        <input type="text" required id="first_name" name="first_name" placeholder="First name" maxlength="30">
+
+        <label for="last_name" class="required">Last name:</label>
+        <input type="text" required id="last_name" name="last_name" placeholder="Last name" maxlength="30">
+
+        <label for="phone" class="required">Phone:</label>
+        <input type="tel" required onkeyup="this.value=this.value.replace(/[^\d]/,'')" id="phone" name="phone" placeholder="Phone number" maxlength="30">
+
+        <label for="email" id="email_label" class="required">Email:</label>
+        <p hidden id="email_error_msg">Please enter a valid email</p>
+        <div id="email_div">
+          <input type="email" required name="email" id="email" placeholder="Email" maxlength="50">
+          <label for="email" id="email_text">This field is required in order to receive an email confirmation.</label>
+        </div>
+
+        <label for="promo_code" id="promo_code_label">Promo Code:</label>
+        <p hidden id="promo_error_msg">Please enter a valid promo code</p>
+        <input type="text" name="promo_code" id="promo_code" placeholder="Promo code" maxlength="7">
+
+        <label for="how_did_you_hear_menu" class="required" id="how_did_you_hear_label">How did you hear:</label>
+        <div class="select">
+          <select required name="how_did_you_hear_menu" id="how_did_you_hear_menu">
+            <option value="Social Media">Social Media</option>
+            <option value="From a friend">From a friend</option>
+            <option value="Email">Email</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <label for="please_specify" id="please_specify_label">Please specify:</label>
+        <textarea hidden name="please_specify" id="please_specify" rows="4" placeholder="Please specify" maxlength="255"></textarea>
+
+        <div id="terms_and_conditons_div">
+          <div id="zero" style="display:none"></div>
+          <div id="text">
+            <input type="checkbox" required name="terms_and_conditions" id="terms_and_conditions">
+            <a href=# target="_self" id="terms_and_conditions_link" class=" required" required>I agree to the terms and conditions of this event.</a>
+            <div id="popUpBox" style="display:none">
+              <a id="hide" href=# target="_self" class="right">x</a>
+              <p> All cancellation requests must be received by March 1, 2022 </p>
+              <p> All cancellation requests are subject to a $100 cancellation fee.</p>
+              <p>No one under the age of 16 will be allowed on the show floor. </p>
+            </div>
+         </div>
+
+      </fieldset>
+      <input type="submit" id="form_submit_btn" value="Submit" disabled>
+    </form>
+
+
+    <footer>
+      <p id="footer_text">For assistance please call 555-5555 or email test@test.com.</p>
+    </footer>
+
+    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
