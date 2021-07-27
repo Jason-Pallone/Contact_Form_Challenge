@@ -7,3 +7,6 @@ $("#HandicapBtn").on("click", function(evt) {
     $("#HandicapText").val("").removeClass("required"); 
   } 
 }); 
+
+
+console.log(2)
